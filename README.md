@@ -73,7 +73,3 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-Feel free to customize the README further with any additional information or details specific to your project. Make sure to replace placeholders like `your-username`, add any additional sections you deem necessary, and include instructions on how to set up and use your web API.
-
-Please implement the authentication mechanism in the application, and also implement the authorization mechanism using JWT tokens to ensure that all contact operations are performed only by registered users. Users should only have access to their own contact operations.
