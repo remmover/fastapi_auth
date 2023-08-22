@@ -52,6 +52,18 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 - **GET /api/contacts/search/{contact_value}**: Search contacts by name, surname, or email.
 - **GET /api/contacts/birthday/next-week**: Get contacts with birthdays in the upcoming week.
 
+## Authentication and Authorization
+
+To enhance security and control access to the API, the following mechanisms have been implemented:
+
+- **User Registration**: Users can register with their email and password. Duplicate email registration will result in an HTTP 409 Conflict response.
+
+- **Password Hashing**: The server securely hashes passwords and does not store them in plain text in the database.
+
+- **Authentication**: User authentication for POST operations is done using the user's email and password. An HTTP 401 Unauthorized response is returned if the user does not exist or if the password is incorrect.
+
+- **JWT Token**: JSON Web Tokens (JWT) are used for authorization. Upon successful authentication, the server returns an access token and a refresh token. Users can use the access token to perform authorized operations.
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
@@ -63,3 +75,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 Feel free to customize the README further with any additional information or details specific to your project. Make sure to replace placeholders like `your-username`, add any additional sections you deem necessary, and include instructions on how to set up and use your web API.
+
+Please implement the authentication mechanism in the application, and also implement the authorization mechanism using JWT tokens to ensure that all contact operations are performed only by registered users. Users should only have access to their own contact operations.
